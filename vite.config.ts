@@ -13,7 +13,7 @@ export default defineConfig({
   plugins: [
     tanstackStart(),
     nitro({
-      preset: "vercel",
+      preset: process.env.VERCEL ? "vercel" : undefined,
     }),
     react(),
     tailwindcss(),
