@@ -63,7 +63,8 @@ export function AboutOverlay({ open, onClose }: { open: boolean; onClose: () => 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.55, duration: 0.7 }}
-              href="#"
+              href="/Resume_Final.pdf"
+              download="Sumanth_Resume.pdf"
               className="magnetic-hover mt-12 inline-flex items-center gap-2 rounded-full bg-white/95 px-6 py-3 text-sm font-medium text-[#050505] hover:-translate-y-0.5 hover:brightness-95"
             >
               <Download className="h-4 w-4" /> Download Resume
