@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Briefcase, Award } from "lucide-react";
+import { Briefcase } from "lucide-react";
 import { Tilt3D } from "@/components/shared/Tilt3D";
 
 import { roles } from "@/data/experience";

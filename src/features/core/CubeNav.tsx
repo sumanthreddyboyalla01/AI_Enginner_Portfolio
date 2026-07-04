@@ -72,7 +72,7 @@ export function CubeNav() {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  const activeRot = FACES[active].rot;
+  const activeRot = FACES[active]?.rot || "";
   const composed = spinning
     ? `${activeRot} rotateZ(8deg) scale(1.08)`
     : `${activeRot} rotateZ(0deg) scale(1)`;
@@ -158,7 +158,7 @@ export function CubeNav() {
           className="inline-block"
           style={{ animation: "cube-label 500ms cubic-bezier(0.2,0.8,0.2,1)" }}
         >
-          {FACES[active].label}
+          {FACES[active]?.label}
         </span>
       </div>
     </div>

@@ -52,7 +52,6 @@ export function useLowPower(): boolean {
         return;
       }
 
-      let raf = 0;
       let last = performance.now();
       let long = 0;
       let total = 0;
@@ -62,10 +61,10 @@ export function useLowPower(): boolean {
         last = t;
         total++;
         if (dt > 22) long++;
-        if (t < stop) raf = requestAnimationFrame(tick);
+        if (t < stop) requestAnimationFrame(tick);
         else if (total > 5 && long / total > 0.3) setLow(true);
       };
-      raf = requestAnimationFrame(tick);
+      requestAnimationFrame(tick);
     };
 
     applyAuto();

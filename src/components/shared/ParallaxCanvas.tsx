@@ -55,48 +55,6 @@ function Orb() {
   );
 }
 
-/** Small wireframe satellite — replaces the crude blue knot. */
-function Satellite() {
-  const ref = useRef<Mesh>(null);
-  useFrame((_s, dt) => {
-    const m = ref.current;
-    if (!m) return;
-    m.rotation.x += dt * 0.35;
-    m.rotation.y += dt * 0.25;
-    const t = performance.now() * 0.0004;
-    m.position.x = 2.6 + Math.sin(t) * 0.25;
-    m.position.y = -0.6 + Math.cos(t * 1.3) * 0.2;
-  });
-  return (
-    <mesh ref={ref} position={[2.6, -0.6, -0.5]} scale={0.42}>
-      <octahedronGeometry args={[1, 0]} />
-      <meshStandardMaterial color="#f5c563" wireframe emissive="#a06a10" emissiveIntensity={0.6} />
-    </mesh>
-  );
-}
-
-function Ring() {
-  const ref = useRef<Mesh>(null);
-  useFrame((_s, dt) => {
-    const m = ref.current;
-    if (!m) return;
-    m.rotation.x += dt * 0.15;
-    m.rotation.y -= dt * 0.08;
-  });
-  return (
-    <mesh ref={ref} position={[-2.4, 0.6, -1.5]} scale={0.6}>
-      <torusGeometry args={[1.2, 0.03, 8, 128]} />
-      <meshStandardMaterial
-        color="#f5c563"
-        emissive="#a06a10"
-        emissiveIntensity={0.55}
-        transparent
-        opacity={0.9}
-      />
-    </mesh>
-  );
-}
-
 /** Additive-blended hologram grid plane behind the whole scene. */
 function HologramGrid() {
   const ref = useRef<Mesh>(null);
@@ -135,7 +93,9 @@ function HologramGrid() {
     });
   }, []);
   useFrame((_s, dt) => {
-    (material.uniforms.uTime.value as number) += dt;
+    if (material?.uniforms?.uTime) {
+      (material.uniforms.uTime.value as number) += dt;
+    }
   });
   return (
     <mesh ref={ref} position={[0, 0, -4]} rotation={[-Math.PI / 2.6, 0, 0]}>

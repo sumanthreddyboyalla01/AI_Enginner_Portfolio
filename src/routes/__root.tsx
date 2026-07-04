@@ -64,10 +64,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 if (typeof window !== "undefined") {
   Sentry.init({
     dsn: "https://examplePublicKey@o0.ingest.sentry.io/0",
-    integrations: [
-      Sentry.browserTracingIntegration(),
-      Sentry.replayIntegration(),
-    ],
+    integrations: [Sentry.browserTracingIntegration(), Sentry.replayIntegration()],
     tracesSampleRate: 1.0,
     replaysSessionSampleRate: 0.1,
     replaysOnErrorSampleRate: 1.0,
