@@ -5,10 +5,10 @@ test.describe("Portfolio Homepage", () => {
     await page.goto("/");
 
     // Expect the title to have specific text (or at least wait for load)
-    await expect(page).toHaveTitle(/Portfolio/i);
+    await expect(page).toHaveTitle(/Sumanth/i);
 
     // Check if the Hero section text is visible
-    const heroText = page.locator("text=Prince");
+    const heroText = page.locator("text=Sumanth");
     await expect(heroText.first()).toBeVisible();
   });
 
