@@ -1,8 +1,4 @@
 import type { Project, Certificate, TechStackItem } from "@/types/portfolio";
-import viyatusCertUrl from "@/assets/certs/internship_certificate.pdf";
-import aicteCertUrl from "@/assets/certs/AICTE Batch 1-268.pdf";
-import googleAiCertUrl from "@/assets/certs/Google.pdf";
-import relianceCertUrl from "@/assets/certs/Reliance Foundation.png";
 import rag from "@/assets/proj-rag.jpg";
 import agents from "@/assets/proj-agents.jpg";
 
@@ -23,33 +19,38 @@ export const projects: Project[] = [
   },
 ];
 
+import relianceCert from "@/assets/certs/Reliance Foundation.png";
+import googleCert from "@/assets/certs/Google.pdf";
+import internshipCert from "@/assets/certs/internship_certificate.pdf";
+import aicteCert from "@/assets/certs/AICTE Batch 1-268.pdf";
+
 export const certificates: Certificate[] = [
   {
     title: "Scholarship for Merit 2024–2025",
     issuer: "Reliance Foundation Undergraduate Scholarship",
     year: "2025",
-    file: relianceCertUrl,
+    file: relianceCert,
     fileName: "Reliance_Foundation.png",
   },
   {
     title: "Google AI Essentials",
     issuer: "Google · Coursera",
     year: "2026",
-    file: googleAiCertUrl,
+    file: googleCert,
     fileName: "Google_AI_Essentials.pdf",
   },
   {
     title: "Full-Stack Developer Internship Completion",
     issuer: "Viyatus Technologies Pvt. Ltd.",
     year: "2026",
-    file: viyatusCertUrl,
+    file: internshipCert,
     fileName: "Viyatus_Internship_Certificate.pdf",
   },
   {
     title: "Virtual Internship — Conversational Data Analysis with LLMs",
     issuer: "AICTE · VOIS for Tech · Edunet Foundation",
     year: "2025",
-    file: aicteCertUrl,
+    file: aicteCert,
     fileName: "AICTE_VOIS_Conversational_Data_Analysis.pdf",
   },
 ];

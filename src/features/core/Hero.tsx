@@ -82,7 +82,7 @@ export const Hero = React.memo(function Hero() {
         <div className="flex items-center gap-2">
           <motion.a
             href="/Resume_Final.pdf"
-            download
+            download="Sumanth_Resume.pdf"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.55, duration: 0.6 }}
